@@ -1,16 +1,21 @@
 
 
 
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import { Header } from "./components/shared/Header";
 import { Footer } from "./components/shared/Footer";
 import "app/sass/globals.sass";
 
 
 
+import {Roboto} from 'next/font/google';
+const roboto = Roboto({
 
+  weight:["100","300","500"],
+  subsets:["latin"],
+})
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata: Metadata = {
 //   title: "Future world",
@@ -27,7 +32,7 @@ export default function RootLayout({
     <html lang="en">
 
       
-      <body className={inter.className}>
+      <body className={roboto.className} >
       <Header />
         
         
