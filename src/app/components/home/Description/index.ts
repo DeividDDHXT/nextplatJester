@@ -1,0 +1,1 @@
+export {Descripcion} from './Description'
