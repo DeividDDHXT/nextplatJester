@@ -4,7 +4,7 @@ import { MainProducts } from "./components/home/MainProducts";
 
 
 export default function Home() {
-console.log("hola mundo pagina de inicio");
+
 
   return (
     <main >
