@@ -9,6 +9,8 @@ import "app/sass/globals.sass";
 
 
 import {Roboto} from 'next/font/google';
+import { Hero } from "./components/home/Hero";
+import { Descripcion } from "./components/home/Description";
 const roboto = Roboto({
 
   weight:["100","300","500"],
@@ -34,9 +36,11 @@ export default function RootLayout({
       
       <body className={roboto.className} >
       <Header />
-        
+      {/* <Hero />
+      <Descripcion /> */}
         
         {children}
+
 <Footer />
       
       </body>
