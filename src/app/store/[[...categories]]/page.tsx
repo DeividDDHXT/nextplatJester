@@ -19,9 +19,28 @@
 //         <h1>Category dinamica {categories}</h1>
 //     )
 // }
+
+
+// interface CategoryProps {
+//   params: {
+//     categories: string[],
+//   }
+//   searchParams?: string
+// }
+
+// export default async function Category(props: CategoryProps) {
+//   const products = await getProducts()
+//   const { categories } = props.params
+
+
+
+//   return (
+//     <ProductsWrapper products={products} />
+//   )
+// }
 import { ProductsWrapper } from "../../../components/Store/ProductWrapper"
-// import { getCollectionProducts, getCollections } from "app/services/shopify/collections"
-import { getProducts } from "../../../services/shopify"
+import { getCollectionProducts, getCollections } from "app/services/shopify/collections"
+import { getProducts } from "../../../services/shopify/product"
 
 interface CategoryProps {
   params: {
@@ -31,10 +50,16 @@ interface CategoryProps {
 }
 
 export default async function Category(props: CategoryProps) {
-  const products = await getProducts()
   const { categories } = props.params
-
-
+  let products = []
+  const collections = await getCollections()
+  
+  if (categories?.length > 0) {
+    const selectedCollectionId = collections.find((collection) => collection.handle === categories[0]).id
+    products = await getCollectionProducts(selectedCollectionId)
+  }else {
+    products = await getProducts()
+  }
 
   return (
     <ProductsWrapper products={products} />
