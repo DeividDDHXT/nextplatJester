@@ -1,5 +1,5 @@
 import { ProductCard } from "../ProductCard"
-import styles from './ProductWrapper.module.sass'
+import styles from './ProductsWrapper.module.sass'
 
 interface ProductsWrapperProps {
     products: ProductType[]

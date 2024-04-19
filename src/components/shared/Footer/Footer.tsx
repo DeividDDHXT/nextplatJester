@@ -1,11 +1,7 @@
-export const Footer = () =>{
-
-
-    return(
-
-<footer>
-    <p>Future world</p>
-</footer>
-
-    )
+export const Footer = () => {
+  return(
+    <footer>
+      <p>Future World</p>
+    </footer>
+  )
 }

@@ -1,44 +1,10 @@
-
-
-// const getProducts = async() =>{
-
-//     const response = await fetch(`${process.env.SHOPIFY_HOSTNAME}/admin/api/2024-01/products.json`, {
-//         headers: new Headers({
-//             'X-Shopify-Access-Token': process.env.SHOPIFY_API_KEY ||""
-
-//         })
-//     })
-
-//     const data = await response.json()
-//         return data
-    
-// }
-
-
-// export const MainProducts = async () =>{
-//  const products = await getProducts()
-
-//  console.log(products)
-//     return(
-// <section>
-
-// <h1>MainProducts</h1>
-
-// </section>
-
-
-//     )
-// }
+import { getMainProducts } from 'app/services/shopify/products'
 import Image from 'next/image'
 import styles from './MainProducts.module.sass'
-import { getProducts } from 'app/services/shopify/product'
-
 
 export const MainProducts = async () => {
-  const reponse = await fetch('http://localhost:3000/api/')
-  const { products } = await reponse.json()
-  
-  
+  const products = await getMainProducts()
+
   return (
     <section className={styles.MainProducts}>
       <h3>✨ New products released!</h3>
