@@ -36,10 +36,7 @@ export const getMainProducts = async () => {
       'X-Shopify-Access-Token': env.SHOPIFY_TOKEN
     }),
     cache: 'force-cache',
-
-    next:{
-
-
+    next: {
       tags: ['main-products']
     }
   })
